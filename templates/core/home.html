@@ -1,0 +1,27 @@
+{% extends 'core/main.html' %}
+
+{% block content %}
+
+<div class="home-container">
+
+    <div>
+        {% include "core/topics_component.html" %}
+    </div>
+
+    <div>
+        <medium>{{room_count}} salas activas.</medium>
+        <br>
+        <a href="{% url 'create-room' %}" class="create-room">Crear Sala</a>
+        <br>
+        <hr>
+        {% include "core/feed_component.html" %}
+                
+    </div>
+        
+    <div>
+        {% include "core/activity_component.html" %}
+    </div>
+
+</div>
+
+{% endblock %}

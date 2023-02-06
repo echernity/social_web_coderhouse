@@ -1,4 +1,4 @@
-# social_web_coderhouse
+# Proyecto: social_web_coderhouse
 Alumno: Rodríguez, Ezequiel
 
 # Detalles

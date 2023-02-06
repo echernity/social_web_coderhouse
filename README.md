@@ -3,7 +3,7 @@ Alumno: Rodríguez, Ezequiel
 
 # Detalles
 - Web estilo red social (twitter, reddit).
-- Filtro por topics y sección de actividad reciente en la web.
+- Filtro por temas y sección de actividad reciente en la web.
 - Creacion de usuarios, posteos y comentarios en cada posteo.
 - Posibilidad de editar o eliminar posteos.
 - Posibilidad de eliminar comentarios.

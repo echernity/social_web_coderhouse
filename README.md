@@ -1,5 +1,5 @@
 # Acerca de
-Web realizada por Ezequiel Rodríguez como proyecto final para el curso de programación en python de Coderhouse. No utulice bootstrap, aproveché la opurtunidad y aprendí un poco mas sobre HTML y CSS, todo el proyecto fue hecho de cero.
+Web realizada por Ezequiel Rodríguez como proyecto final para el curso de programación en python de Coderhouse. No utilice bootstrap, aproveché la opurtunidad y aprendí un poco mas sobre HTML y CSS, todo el proyecto fue hecho de cero.
 
 # Características del proyecto
 - Web estilo red social (twitter, reddit) con creacion de usuarios, posteos y comentarios.

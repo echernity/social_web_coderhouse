@@ -1,14 +1,31 @@
 {% extends 'core/main.html' %}
+{% load tz %}
 
 {% block content %}
 
 <div class="room-container">
 
     <div>
-
-        <h1>{{room.name}}</h1>
-
+        <a href="{% url 'user-profile' room.host.id  %}">@{{room.host.username}}</a>
+        <br>
+        <big class="room-title">{{room.name}}</big>
+        <hr>
+        <div class="img-container">
+        {% if room.image %}
+        <img src="{{ room.image.url }}" class="room-img">
+        {% endif %}
+        </div>
         <p>{{room.description}}</p>
+        {% timezone "America/Buenos_Aires" %}
+        <small>Creado: {{room.created}}</small>
+        <br>
+        <small>Editado: {{room.updated}}</small>
+        {% endtimezone %}
+        <br>
+        {% if request.user == room.host or user.is_staff %}
+            <a href="{% url 'update-room' room.id %}">editar</a>
+            <a href="{% url 'delete-room' room.id %}">eliminar</a>
+        {% endif %}
 
         <div class="comment-wrapper">
             <h3>Comentarios</h3>
@@ -16,11 +33,12 @@
 
             {% for message in room_messages %}
                 <div>
-                    {% if request.user == message.user or user.is_staff %}
-                    <a href="{% url "delete-message" message.id %}">Delete</a>
-                    {% endif %}
-                    <medium>@{{message.user}} dijo hace {{message.created|timesince}}:</medium>
+                    
+                    <medium><a href="{% url 'user-profile' message.user.id %}">@{{message.user}}</a> dijo hace {{message.created|timesince}}:</medium>
                     <p>{{message.body}}</p>
+                    {% if request.user == message.user or user.is_staff %}
+                    <a href="{% url "delete-message" message.id %}">Eliminar</a>
+                    {% endif %}
                     <hr>
                 </div>
             {% endfor %}
@@ -39,12 +57,12 @@
     </div>
 
     <div>
-        <h3>Participantes</h3>
+        <big>Participantes</big>
         <hr>
 
         {% for user in participants %}
         <div>
-            <p>@{{user.username}}</p>
+            <a href="{% url 'user-profile' user.id %}">@{{user.username}}</a>
         </div>
         {% endfor %}
     </div>

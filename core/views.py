@@ -38,7 +38,7 @@ def login_page(request):
 
 def logout_user(request):
     logout(request)
-    return redirect("home")
+    return redirect("index")
 
 
 def register_page(request):
@@ -76,6 +76,15 @@ def home(request):
     return render(request, "core/home.html", context)
     
 
+def index(request):
+    room_messages = Message.objects.all()
+    context = {"room_messages": room_messages}
+    return render(request, "core/index.html", context)
+
+
+def about(request):
+    return render(request, "core/about.html")
+
 def room(request, pk):
     room = Room.objects.get(id=pk)
     room_messages = room.message_set.all()
@@ -108,11 +117,12 @@ def create_room(request):
     form = RoomForm()
     
     if request.method == "POST":
-        form = RoomForm(request.POST)
+        form = RoomForm(request.POST, request.FILES)
         if form.is_valid():
             room = form.save(commit=False)
             room.host = request.user
             room.save()
+            room.participants.add(request.user)
             return redirect("home")
     
     context = {"form": form}

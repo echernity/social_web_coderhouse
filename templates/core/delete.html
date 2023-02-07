@@ -6,7 +6,8 @@
     {% csrf_token %}
     <p>Eliminar {{obj}}?</p>
 
+    <input type="Submit" value="Confirmar" />
+    <br>
     <a href="{{request.META.HTTP_REFERER}}">Volver</a>
-    <input type="Submit" value="Confirm" />
 
 {% endblock %}

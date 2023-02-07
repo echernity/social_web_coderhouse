@@ -1,6 +1,13 @@
-<div>
-    <a href="{% url 'home' %}">Home | </a>
-    <a href="#">About | </a>
-    <a href="#">Login | </a>
-    <a href="#">Register</a>
+<div class="navbar">
+    <a href="{% url 'index' %}">inicio </a>
+    <a href="{% url 'home' %}">posteos </a>
+    <a href="{% url 'about' %}">acerca_de </a>
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'user-profile' user.id %}">user:@{{user.username}}</a>
+    <a href="{% url 'logout' %}"> salir </a>
+    {% else %}
+    <a href="{% url 'login' %}"> ingresar </a>
+    <a href="{% url 'register' %}"> registrarse </a>
+    {% endif %}
+    <hr>
 </div>

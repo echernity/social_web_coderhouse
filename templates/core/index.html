@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Web</title>
+</head>
+
+<style>
+    html {
+        background: #140019;
+        font: 110% calibri;
+        color: #079453;
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+
+    a:link, a:visited {
+        color: #9314ee;
+        text-decoration: none;
+    }
+
+    a:hover{
+        color:#d60e93;
+    }
+
+    hr {
+        border: 0;
+        height: 1px;
+        width: 95%;
+        background:#230439
+    }
+
+    .title{
+        font: 180% calibri;
+        text-align: center;
+        padding-top: 4%;
+    }
+
+    .navbar{
+        margin: 2%;
+        text-align: center;
+        word-spacing: 2rem;
+    }
+
+    .create-room{
+        display:grid;
+        font: 120% calibri;
+        text-align: right;
+        margin-top: -1.5rem;
+        margin-bottom: 0.5rem;
+        margin-right: 2rem;
+    }
+
+    .info{
+        margin-left: 2rem;
+    }
+
+    .topic{
+        display: block;
+        text-align: right;
+        margin-top: -1.25rem;
+        margin-bottom: -1rem;
+    }
+
+    .room{
+        margin: 2%;
+        padding: 2%;
+        border: 0.5rem solid #230439;
+        border-radius: 1rem;
+        min-height: 6rem;
+        max-height: 6rem;
+    }
+
+    .room-title{
+        font: 150% Calibri;
+    }
+
+
+    .creation-date{
+        display:block;
+        text-align: right;
+        padding-top:1.5rem;
+        margin-bottom: -2.5rem;
+    }
+
+
+    .room-img{
+        max-width:100%;
+        max-height:auto;
+    }
+
+
+    .home-container{
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr; 
+    }
+
+
+    .room-container, .profile-container {
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+    }
+
+    .index-container{
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+    }
+
+</style>
+<body>
+    <div class="title">
+        <h1>SocialWeb</h1>
+    </div>
+
+    {% include 'core/navbar.html' %}
+    
+    {% if request.path == '/' %}
+
+    <div class="index-container">
+        <div>
+            <h2>Bienvenid@ <a href="{% url 'user-profile' user.id %}">{{user.username}}</a></h2>
+        </div>
+        <div>
+            {% include "core/activity_component.html" %}
+        </div>
+    </div>
+    {% else %}
+
+
+    {% block main %}
+    {% endblock %}
+    {% block about %}
+    {% endblock %}
+
+    {% endif %}
+</body>
+</html>

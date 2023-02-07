@@ -1,54 +1,6 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Web</title>
-</head>
-
-<style>
-
-    html {
-        background: #140019;
-        font: 110% calibri;
-        color: #079453;
-    }
-
-
-    a:link, a:visited {
-        color: #9314ee;
-        text-decoration: none;
-    }
-
-    hr {
-        border: 0;
-        height: 1px;
-        width: 95%;
-        background:#230439
-    }
-
-
-    .home-container, .profile-container {
-        display: grid;
-        grid-template-columns: 1fr 3fr 1fr; 
-    }
-
-
-    .room-container {
-        display: grid;
-        grid-template-columns: 4fr 1fr;
-    }
-
-</style>
-<body>
-    <div>
-        <h1>Social Web</h1>
-    </div>
-
-    {% include 'core/navbar.html' %}
-
+{% extends 'core/index.html' %}
+{% block main %}
+<div>
     {% if messages %}
     <ul class="messages">
         {% for message in messages %}
@@ -57,9 +9,9 @@
     </ul>
     {% endif %}
 
-    {% block content %}
     
+    {% block content %}
     {% endblock %}
-
-</body>
-</html>
+ 
+</div>
+{% endblock %}

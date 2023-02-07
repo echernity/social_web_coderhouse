@@ -9,10 +9,12 @@
     </div>
 
     <div>
-        <medium>{{room_count}} salas activas.</medium>
         <br>
-        <a href="{% url 'create-room' %}" class="create-room">Crear Sala</a>
-        <br>
+        <big class="info">{{room_count}} posteos activos</big>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'create-room' %}" class="create-room" class="crear-sala">Postear</a>
+        {% endif %}
+
         <hr>
         {% include "core/feed_component.html" %}
                 

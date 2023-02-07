@@ -2,18 +2,15 @@
 
 {% block content %}
 
-<h1>{{user.username}}</h1>
+<h1>@{{user.username}}</h1>
 
 <div class="profile-container">
 
     <div>
-
-        {% include "core/topics_component.html" %}
-    
-    </div>
-
-    <div>
-    
+        <br>
+        <big>Posteos creados</big>
+        <br>
+        <hr>
         {% include "core/feed_component.html" %}
 
     </div>

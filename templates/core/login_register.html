@@ -8,15 +8,15 @@
     <form method="POST" action="" >
         {% csrf_token %}
 
-        <label>Username:</label>
-        <input type="text" name="username" placeholder="Enter Username" />
+        <label>Usuario:</label>
+        <input type="text" name="username" placeholder="Ingrese su usuario" />
 
-        <label>Password:</label>
-        <input type="password" name="password" placeholder="Enter Password" />
-        <input type="Submit" value="Login" />
+        <label>Contraseña:</label>
+        <input type="password" name="password" placeholder="Ingrese se contraseña" />
+        <input type="Submit" value="Ingresar" />
     </form>    
-    <p>Haven't signed up yet?</p>
-    <a href="{% url "register" %}">Sing up</a>
+    <p>Todavia no tenes una cuenta?</p>
+    <a href="{% url "register" %}">Registrarse</a>
 </div>
 
 {% else %}
@@ -26,10 +26,10 @@
         {% csrf_token %}
         {{form.as_p}}
 
-        <input type="Submit" value="Register" />
+        <input type="Submit" value="Registrarse" />
     </form>
-    <p>Already signed up?</p>
-    <a href="{% url "login" %}">Login</a>
+    <p>Ya tenes cuenta?</p>
+    <a href="{% url "login" %}">Ingresar</a>
 </div>
 {% endif %}
 

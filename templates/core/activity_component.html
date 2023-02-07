@@ -1,15 +1,13 @@
-
-<h3>Actividad Reciente</h3>
+<br>
+<big>Actividad</big>
 <hr>
-{% for message in room_messages %}
+{% for message in room_messages|slice:":10" %}
     <div>
-        <small><a href="{% url 'user-profile' message.user.id %}">@{{message.user}}</a> {{message.created|timesince}}</small>
-        <small>comentó en "{{message.room}}"</small>:
-
-        <p>{{message}}</p>
+        <a href="{% url 'user-profile' message.user.id %}">@{{message.user}}</a> comentó hace {{message.created|timesince}} en "{{message.room}}":</small>
+        <small>{{message}}</small>
         {% if request.user == message.user or user.is_staff %}
-            <a href="{% url 'delete-message' message.id %}">Eliminar</a>
-            {% endif %}
-            <hr>
+        <a href="{% url 'delete-message' message.id %}">eliminar</a>
+        {% endif %}
+        <hr>
     </div>
 {% endfor %}

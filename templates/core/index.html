@@ -11,7 +11,7 @@
 <style>
     html {
         background: #140019;
-        font: 110% calibri;
+        font: 100% calibri;
         color: #079453;
         padding-left: 15%;
         padding-right: 15%;
@@ -77,6 +77,7 @@
 
     .room-title{
         font: 150% Calibri;
+
     }
 
 
@@ -93,6 +94,24 @@
         max-height:auto;
     }
 
+    .about{
+        display: block;
+        text-align: justify;
+    }
+
+    .about-sub2{
+        border: 0.1rem solid #230439;
+        margin-top: 3%;
+        padding: 2%;
+        padding-left: 4%;
+    }
+
+    .about-sub3{
+        border: 0.1rem solid #230439;
+        padding: 2%;
+        padding-left: 4%;
+        width: 58%;
+    }
 
     .home-container{
         display: grid;
@@ -122,7 +141,7 @@
 
     <div class="index-container">
         <div>
-            <h2>Bienvenid@ <a href="{% url 'user-profile' user.id %}">{{user.username}}</a></h2>
+            <h1>Bienvenid@, <a href="{% url 'user-profile' user.id %}">{{user.username}}</a>!</h1>
         </div>
         <div>
             {% include "core/activity_component.html" %}

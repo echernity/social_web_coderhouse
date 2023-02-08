@@ -1,7 +1,7 @@
 <div class="navbar">
     <a href="{% url 'index' %}">inicio </a>
     <a href="{% url 'home' %}">posteos </a>
-    <a href="{% url 'about' %}">acerca_de </a>
+    <a href="{% url 'about' %}">info </a>
     {% if request.user.is_authenticated %}
     <a href="{% url 'user-profile' user.id %}">user:@{{user.username}}</a>
     <a href="{% url 'logout' %}"> salir </a>

@@ -1,25 +1,31 @@
 {% extends 'core/index.html' %}
 {% block about %}
+<h1><a href="">Acerca de</a></h1> 
+<hr>
 <div class="about">
-    <h1><a href="">Acerca de</a></h1> 
-    <hr>
-    <big>Web realizada por Ezequiel Rodríguez como proyecto final para el curso de programación en python de Coderhouse. No utilice bootstrap, aproveché la opurtunidad y aprendí un poco mas sobre HTML y CSS, todo el proyecto fue hecho de cero.</big>
-    <br><br>
-    <big>Características del proyecto:</big>
+    <div class="about-sub1">
+        <medium>Web realizada por Ezequiel Rodríguez como proyecto final para el curso de programación en python de Coderhouse. No utilice bootstrap, aproveché la opurtunidad y aprendí un poco mas sobre HTML y CSS, todo el proyecto fue hecho de cero. Me hubiese gustado dejarlo un poco mas bello pero no llegué con el tiempo. <br> <i>Nota: En el video verán que hay imagenes pero por alguna razón no se suben a GitHub :(</i></medium>
+    </div>
+    <div class="about-sub2">
+    <medium>Características del proyecto:</medium>
     <br>
     <li>Web estilo red social (twitter, reddit) con creacion de usuarios, posteos y comentarios.</li>
-    <li>Filtro por temas y sección de actividad reciente en la web.</li>
-    <li>Cada usuario tiene un perfil donde figuran todos sus posteos y comentarios recientes.</li>
     <li>Posibilidad de crear, editar y eliminar posteos (solo si los posteos son del usuario o si el usuario es administrador).</li>
     <li>Posibilidad de crear y eliminar comentarios (solo si los comentarios son del usuario o si el usuario es administrador).</li>
+    <li>Cada usuario tiene un perfil donde figuran todos sus posteos y comentarios recientes.</li>
+    <li>Los posteos estan catalogados por temas (topics).</li>
+    <li>Filtro por temas y sección de actividad reciente en la web.</li>
+    </div>
     <br>
-    <big>Para testear la funcionalidad de la web se crearon los siguientes perfiles:</big>
+    <div class="about-sub3">
+    <medium>Para testear la funcionalidad de la web se crearon los siguientes usuarios:</medium>
     <br>
-    <li>eche (admin)</li>
+    <li>eche (administrador)</li>
     <li>pepito</li>
     <li>melocoton</li>
     <li>elonmusk</li>
     <li>meloncito</li>
-    <i><u>Nota</u>: Todos los usuarios de la lista tienen como contraseña "coder1234".</i>
+    <i>La contraseña de los usuarios listados es coder1234</i>
+    </div>
 </div>
 {% endblock %}

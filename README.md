@@ -8,4 +8,4 @@ Web realizada por Ezequiel Rodríguez como proyecto final para el curso de progr
 - Posibilidad de crear, editar y eliminar posteos (solo si los posteos son del usuario o si el usuario es administrador).
 - Posibilidad de crear y eliminar comentarios (solo si los comentarios son del usuario o si el usuario es administrador).
 
-Link video (https://github.com/echernity/social_web_coderhouse)
+Link a video de web funcionando (https://drive.google.com/file/d/1SgCkYv3TesbBr0vFT13CEL4A-OAjXnYW/view?usp=sharing)
